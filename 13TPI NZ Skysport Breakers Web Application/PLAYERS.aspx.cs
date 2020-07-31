@@ -11,7 +11,12 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((string)Session["IfSignedIn"] == "true")
+            {
+                login_button.Text = "Welcome " + (string)Session["GetUsername"];
+                login_button.Enabled = false;
+                logout_button.Visible = true;
+            }
         }
 
         protected void Home_Button_Click(object sender, EventArgs e)
@@ -40,6 +45,12 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         }
         protected void login_button_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/LOGIN.aspx");
+        }
+
+        protected void logout_button_Click(object sender, EventArgs e)
+        {
+            Session["IfSignedIn"] = "false";
             Response.Redirect("~/LOGIN.aspx");
         }
     }

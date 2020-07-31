@@ -88,5 +88,10 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 lblSuccessMessage.Text = "Deleted  Successfully";
         }
         }
+
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LOGIN.aspx");
+        }
     }
 }

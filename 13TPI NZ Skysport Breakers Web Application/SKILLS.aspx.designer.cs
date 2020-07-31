@@ -11,7 +11,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 {
 
 
-    public partial class TIPS_AND_TRICKS
+    public partial class SKILLS
     {
 
         /// <summary>
@@ -24,6 +24,24 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// hfUserID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfUserID;
+
+        /// <summary>
+        /// Back_Button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Back_Button;
+
+        /// <summary>
         /// Home_Button control.
         /// </summary>
         /// <remarks>
@@ -33,75 +51,84 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button Home_Button;
 
         /// <summary>
-        /// Players_Button control.
+        /// lblSkillLVL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Players_Button;
+        protected global::System.Web.UI.WebControls.Label lblSkillLVL;
 
         /// <summary>
-        /// Schedule_Button control.
+        /// btnBeginner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Schedule_Button;
+        protected global::System.Web.UI.WebControls.Button btnBeginner;
 
         /// <summary>
-        /// Tips_Button control.
+        /// btnIntermediate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Tips_Button;
+        protected global::System.Web.UI.WebControls.Button btnIntermediate;
 
         /// <summary>
-        /// Videos_Button control.
+        /// btnAdvanced control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Videos_Button;
+        protected global::System.Web.UI.WebControls.Button btnAdvanced;
 
         /// <summary>
-        /// logout_button control.
+        /// BeginnerContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout_button;
+        protected global::System.Web.UI.WebControls.Label BeginnerContent;
 
         /// <summary>
-        /// login_button control.
+        /// lblProgress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login_button;
+        protected global::System.Web.UI.WebControls.Label lblProgress;
 
         /// <summary>
-        /// skills_button control.
+        /// btnBeginnerDribble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button skills_button;
+        protected global::System.Web.UI.WebControls.Button btnBeginnerDribble;
 
         /// <summary>
-        /// lblErrorMsg control.
+        /// IntermediateContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMsg;
+        protected global::System.Web.UI.WebControls.Label IntermediateContent;
+
+        /// <summary>
+        /// AdvancedContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AdvancedContent;
     }
 }

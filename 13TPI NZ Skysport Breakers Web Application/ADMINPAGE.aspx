@@ -34,6 +34,8 @@
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
         <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"/>
         <asp:Label ID="lblSuccessMessage" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Button ID="btnReturn" runat="server" Text="Return to Login Page" OnClick="btnReturn_Click" />
     </form>
 </body>
 </html>

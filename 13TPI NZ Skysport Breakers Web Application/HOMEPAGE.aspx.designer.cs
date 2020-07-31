@@ -69,6 +69,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button Videos_Button;
 
         /// <summary>
+        /// logout_button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logout_button;
+
+        /// <summary>
         /// login_button control.
         /// </summary>
         /// <remarks>

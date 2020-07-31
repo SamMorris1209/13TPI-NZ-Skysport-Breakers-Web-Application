@@ -64,27 +64,31 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top" style="background-color:black">
-  <div class="w3-bar" id="myNavbar">
+   <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a class="w3-bar-item w3-button" style="color:white">
-      <asp:Button ID="Home_Button" runat="server" OnClick="Home_Button_Click" Text="HOME" BackColor="Black" BorderStyle="None" ForeColor="White" />
+    <a class="w3-bar-item " onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
+      <asp:Button ID="Home_Button" runat="server" OnClick="Home_Button_Click" Text="HOME" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" />
       </a>&nbsp;
-      <a class="w3-bar-item w3-button w3-hide-small" style="color:white"><i class="fa fa-user"></i>
-          <asp:Button ID="Players_Button" runat="server" OnClick="Players_Button_Click" Text="PLAYERS" BackColor="Black" BorderStyle="None" ForeColor="White" /></a>
+      <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i class="fa fa-user"></i>
+          <asp:Button ID="Players_Button" runat="server" OnClick="Players_Button_Click" Text="PLAYERS" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" /></a>
     
-      <a class="w3-bar-item w3-button w3-hide-small" style="color:white"><i><img src="IMAGES/GOODDATE.png" style="width:20px;height:20px;"></i>
-          <asp:Button ID="Schedule_Button" runat="server" OnClick="Schedule_Button_Click" Text="SCHEDULE" BackColor="Black" BorderStyle="None" ForeColor="White" /></a>
+      <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/GOODDATE.png" style="width:20px;height:20px;"></i>
+          <asp:Button ID="Schedule_Button" runat="server" OnClick="Schedule_Button_Click" Text="SCHEDULE" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/></a>
    
-      <a class="w3-bar-item w3-button w3-hide-small" style="color:white"><i><img src="IMAGES/BBALL.png" style="width:20px;height:20px;" /></i>
-          <asp:Button ID="Tips_Button" runat="server" Text="TIPS AND TRICKS" OnClick="Tips_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" /></a>
+      <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/BBALL.png" style="width:20px;height:20px;" /></i>
+          <asp:Button ID="Tips_Button" runat="server" Text="TIPS AND TRICKS" OnClick="Tips_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/></a>
    
-      <a class="w3-bar-item w3-button w3-hide-small" style="color:white"><i><img src="IMAGES/vidoes.png" style="width:20px;height:20px;" /></i> 
-          <asp:Button ID="Videos_Button" runat="server" Text="VIDEOS" OnClick="Videos_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" /> </a>
+      <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/vidoes.png" style="width:20px;height:20px;" /></i> 
+          <asp:Button ID="Videos_Button" runat="server" Text="VIDEOS" OnClick="Videos_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/> </a>
+   
+        <a class="w3-bar-item w3-hide-small w3-right" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
+          <asp:Button ID="logout_button" runat="server" Text="LOGOUT" OnClick="logout_button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Visible="False" /></a>
 
- <a class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="color:white">
-          <asp:Button ID="login_button" runat="server" Text="LOGIN/REGISTER" OnClick="login_button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" Font-Bold="True" />
+
+      <a class="w3-bar-item w3-hide-small w3-right" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
+          <asp:Button ID="login_button" runat="server" Text="LOGIN/REGISTER" OnClick="login_button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/>
     </a>
   </div>
 

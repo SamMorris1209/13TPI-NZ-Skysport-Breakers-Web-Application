@@ -10,6 +10,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 {
     public partial class LOGIN : System.Web.UI.Page
     {
+        
         string connectionString = @"Data Source = tpisql01.avcol.school.nz; Initial Catalog = SAMUserRegistration; Integrated Security = True;";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,7 +44,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
-                    Response.Redirect("~/HOMEPAGE.aspx");
+                    Response.Redirect("~/HOMEPAGEIN.aspx");
                     Clear();
                 }
             }
@@ -65,11 +66,13 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             }
             else if (dtbl.Rows.Count > 0)
                 {
+                Session["IfSignedIn"] = "true";
+                Session["GetUsername"] = txtUsernameIn.Text;
                 Response.Redirect("~/HOMEPAGE.aspx");
             }
             else
             {
-                Response.Redirect("~/LOGIN.aspx");
+                Label10.Visible = true;
             }
         }
 

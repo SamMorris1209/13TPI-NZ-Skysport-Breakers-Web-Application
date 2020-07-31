@@ -75,10 +75,11 @@ body, html {
             </p>
           <asp:Label ID="Label4" runat="server" Text="Password:" Font-Bold="True" Font-Names="Segoe UI Black" Font-Size="X-Large" ForeColor="White"></asp:Label>
         <p class="w3-center">
-        <asp:TextBox ID="txtPasswordIn" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
+        <asp:TextBox ID="txtPasswordIn" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);" TextMode="Password"></asp:TextBox>
             </p>
              <p class="w3-center">
              <asp:Button ID="btnSignIn" runat="server" Text="Sign In!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignIn_Click" />
+                 <asp:Label ID="Label10" runat="server" Font-Size="Large" ForeColor="Red" Height="0px" Text="Password is incorrect" Visible="False"></asp:Label>
                  </p>
         <p style="color:white">
             ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -110,6 +111,10 @@ body, html {
              <asp:Button ID="btnSignUp" runat="server" Text="Sign Up!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignUp_Click" />
                  </p>
         </div>
+        <asp:HiddenField ID="HFSearch" runat="server" />
     </form>
     </body>
+    <script>
+
+    </script>
     </html>
