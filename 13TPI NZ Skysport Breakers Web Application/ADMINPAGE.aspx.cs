@@ -58,7 +58,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     Clear();
-                    lblSuccessMessage.Text = "Submitted Successfully";
+                    lblSuccessMessage.Text = "submitted successfully";
                 }
             }
         }

@@ -33,6 +33,33 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.HiddenField hfUserID;
 
         /// <summary>
+        /// Userlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Userlbl;
+
+        /// <summary>
+        /// Passlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Passlbl;
+
+        /// <summary>
+        /// Skilllbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Skilllbl;
+
+        /// <summary>
         /// Back_Button control.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Home_Button;
+
+        /// <summary>
+        /// testlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label testlbl;
 
         /// <summary>
         /// lblSkillLVL control.

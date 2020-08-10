@@ -44,7 +44,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
-                    Response.Redirect("~/HOMEPAGEIN.aspx");
+                    SignupMessage.Visible = true;
                     Clear();
                 }
             }
@@ -68,6 +68,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 {
                 Session["IfSignedIn"] = "true";
                 Session["GetUsername"] = txtUsernameIn.Text;
+                Session["GetPassword"] = txtPasswordIn.Text;
                 Response.Redirect("~/HOMEPAGE.aspx");
             }
             else

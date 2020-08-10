@@ -108,7 +108,7 @@ body, html {
         <asp:TextBox ID="txtConfirmpassword" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
             </p>
               <p class="w3-center">
-             <asp:Button ID="btnSignUp" runat="server" Text="Sign Up!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignUp_Click" />
+             <asp:Button ID="btnSignUp" runat="server" Text="Sign Up!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignUp_Click" /><asp:Label ID="SignupMessage" runat="server" Text="Signed up successfully" ForeColor="Red" Visible="false"></asp:Label>
                  </p>
         </div>
         <asp:HiddenField ID="HFSearch" runat="server" />

@@ -57,6 +57,10 @@ body, html {
     </style>
 <body style="background-color:black;color:white">
     <form id="form1" runat="server">
+        <asp:HiddenField ID="hfUserID" runat="server" />
+        <asp:Label ID="Userlbl" runat="server" Text="" Visible="False"></asp:Label>
+        <asp:Label ID="Passlbl" runat="server" Text="" Visible="False"></asp:Label>
+        <asp:Label ID="Skilllbl" runat="server" Text="" Visible="False"></asp:Label>
             <div class="w3-top" style="background-color:black">
    <div class="w3-bar" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -72,6 +76,7 @@ body, html {
                 </div>
 
             <p> l</p>
+        <asp:Label ID="testlbl" runat="server" Text="" Visible="false"></asp:Label>
         <asp:Label ID="lblSkillLVL" runat="server" Text="">
     <h3 class="w3-center">Please Choose your skill level</h3>
     <div class="w3-center">      

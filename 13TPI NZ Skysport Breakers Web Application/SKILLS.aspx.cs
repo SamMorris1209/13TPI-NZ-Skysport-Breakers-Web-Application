@@ -14,7 +14,19 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         string connectionString = @"Data Source = tpisql01.avcol.school.nz; Initial Catalog = SAMUserRegistration; Integrated Security = True;";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Userlbl.Text = (string)Session["GetUsername"];
+            Passlbl.Text = (string)Session["GetPassword"];
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("GetUserID", sqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("@Username", Userlbl.Text);
+                sqlDa.SelectCommand.Parameters.AddWithValue("@Password", Passlbl.Text);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                testlbl.Text = dtbl.Rows[0][0].ToString();
+            }
         }
 
         protected void Back_Button_Click(object sender, EventArgs e)
@@ -29,23 +41,57 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
         protected void btnBeginner_Click(object sender, EventArgs e)
         {
-            lblSkillLVL.Visible = false;
-            BeginnerContent.Visible = true;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@SkillLevel", "Beginner");
+                sqlCmd.ExecuteNonQuery();
+                Clear();
+            }
         }
         protected void btnIntermediate_Click(object sender, EventArgs e)
         {
+
             lblSkillLVL.Visible = false;
             IntermediateContent.Visible = true;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@SkillLevel", "Intermediate");
+                sqlCmd.ExecuteNonQuery();
+                Clear();
+            }
         }
 
         protected void btnAdvanced_Click(object sender, EventArgs e)
         {
             lblSkillLVL.Visible = false;
             AdvancedContent.Visible = true;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@SkillLevel", "Advanced");
+                sqlCmd.ExecuteNonQuery();
+                Clear();
+            }
         }
         protected void btnBeginnerDribble_Click(object sender, EventArgs e)
         {
 
         }
+        void Clear()
+        {
+            hfUserID.Value = "";        
+        }
+
     }
 }
