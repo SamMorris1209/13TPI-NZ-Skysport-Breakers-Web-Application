@@ -77,6 +77,7 @@ body, html {
 
             <p> l</p>
         <asp:Label ID="testlbl" runat="server" Text="" Visible="false"></asp:Label>
+         <asp:Label ID="ProgressValue" runat="server" Text="" Visible="false"></asp:Label>
         <asp:Label ID="lblSkillLVL" runat="server" Text="">
     <h3 class="w3-center">Please Choose your skill level</h3>
     <div class="w3-center">      
@@ -88,10 +89,10 @@ body, html {
         <p class="w3-center">Already understand the game well but want to refine skills and learn tricks</p>
     </div>
             </asp:Label>
-        <asp:Label ID="BeginnerContent" runat="server" Text="" Visible ="false">
+        <asp:Label ID="BeginnerContent" runat="server" Text="">
             <div class="w3-center">
                 <p>Here is your progress- watch videos and complete tasks to gain points! work your way up to the next stage!</p>
-            <asp:Label ID="lblProgress" runat="server" Text="0/100" Font-Size="Large"></asp:Label>
+            <asp:Label ID="lblProgress" runat="server" Text="/100" Font-Size="Large"></asp:Label>
                 </div>
             <div class="w3-quarter">
                 <p class="w3-center">Learn to dribble! -- Click this button to try a dribbling task:</p>
@@ -102,9 +103,13 @@ body, html {
                 <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                  <iframe height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe>
             </div>
+            </asp:Label>
+        <asp:Label ID="IntermediateContent" runat="server" Text="" Visible ="false">
+            hi<asp:Button ID="btnIntertask" runat="server" Text="TASK" OnClick="btnIntertask_Click"/><asp:Label ID="IlblProgress" runat="server" Text=""></asp:Label>
         </asp:Label>
-        <asp:Label ID="IntermediateContent" runat="server" Text="" Visible ="false"></asp:Label>
-        <asp:Label ID="AdvancedContent" runat="server" Text="" Visible ="false"></asp:Label>
+        <asp:Label ID="AdvancedContent" runat="server" Text="" Visible ="false">
+            hiye
+        </asp:Label>
     </form>
 </body>
 </html>
