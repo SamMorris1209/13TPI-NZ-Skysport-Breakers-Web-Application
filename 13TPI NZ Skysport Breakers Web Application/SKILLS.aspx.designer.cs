@@ -168,24 +168,6 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Label IntermediateContent;
 
         /// <summary>
-        /// btnIntertask control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIntertask;
-
-        /// <summary>
-        /// IlblProgress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IlblProgress;
-
-        /// <summary>
         /// AdvancedContent control.
         /// </summary>
         /// <remarks>

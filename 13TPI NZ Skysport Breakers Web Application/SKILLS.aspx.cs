@@ -49,6 +49,10 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 {
                     lblSkillLVL.Visible = false;
                     IntermediateContent.Visible = true;
+                    SqlDataAdapter IPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + testlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                    DataTable IPTable = new DataTable();
+                    IPsqa.Fill(IPTable);
+                    lblProgress.Text = IPTable.Rows[0][0].ToString() + "/100";
                 }
                 else
                 {
@@ -59,6 +63,10 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     {
                         lblSkillLVL.Visible = false;
                         AdvancedContent.Visible = true;
+                        SqlDataAdapter APsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + testlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                        DataTable APTable = new DataTable();
+                        APsqa.Fill(APTable);
+                        lblProgress.Text = APTable.Rows[0][0].ToString() + "/100";
                     }
                     else
                     {
@@ -124,29 +132,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         }
         protected void btnBeginnerDribble_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand sqlCmd = new SqlCommand("GetProgress", sqlCon);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim()); ;
-                sqlCmd.ExecuteNonQuery();
-                Response.Redirect("~/SKILLS.aspx");
-            }
+            IncrementProgress();
         }
-            protected void btnIntertask_Click(object sender, EventArgs e)
-            {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    SqlCommand sqlCmd = new SqlCommand("GetProgress", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim()); ;
-                    sqlCmd.ExecuteNonQuery();
-                    Response.Redirect("~/SKILLS.aspx");
-
-                }
-            }
                 void Clear()
         {
             hfUserID.Value = "";        
@@ -164,6 +151,18 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 Clear();
             }
             Response.Redirect("~/SKILLS.aspx");
+        }
+        void IncrementProgress()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("GetProgress", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+                Response.Redirect("~/SKILLS.aspx");
+            }
         }
     }
 }

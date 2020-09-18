@@ -105,10 +105,10 @@ body, html {
             </div>
             </asp:Label>
         <asp:Label ID="IntermediateContent" runat="server" Text="" Visible ="false">
-            hi<asp:Button ID="btnIntertask" runat="server" Text="TASK" OnClick="btnIntertask_Click"/><asp:Label ID="IlblProgress" runat="server" Text=""></asp:Label>
+
         </asp:Label>
         <asp:Label ID="AdvancedContent" runat="server" Text="" Visible ="false">
-            hiye
+            
         </asp:Label>
     </form>
 </body>
