@@ -25,48 +25,49 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     sqlDa.SelectCommand.Parameters.AddWithValue("@Password", Passlbl.Text);
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
-                    testlbl.Text = dtbl.Rows[0][0].ToString();
+                    UserIDlbl.Text = dtbl.Rows[0][0].ToString();
                 }           
             SqlConnection con = new SqlConnection(connectionString);
-            SqlDataAdapter sqa = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + testlbl.Text + "' and SkillLevel = '" + "Beginner" + "'", con);
+            SqlDataAdapter sqa = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Beginner" + "'", con);
             System.Data.DataTable detbl = new System.Data.DataTable();
             sqa.Fill(detbl);
             if (detbl.Rows.Count > 0)
             {
                 lblSkillLVL.Visible = false;
                 BeginnerContent.Visible = true;
-                SqlDataAdapter BPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + testlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                SqlDataAdapter BPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
                 DataTable BPTable = new DataTable();
                 BPsqa.Fill(BPTable);
                 lblProgress.Text = BPTable.Rows[0][0].ToString() + "/100";
             }
             else
             {
-                SqlDataAdapter sqa2 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + testlbl.Text + "' and SkillLevel = '" + "Intermediate" + "'", con);
+                SqlDataAdapter sqa2 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Intermediate" + "'", con);
                 DataTable deetbl = new DataTable();
                 sqa2.Fill(deetbl);
                 if (deetbl.Rows.Count > 0)
                 {
                     lblSkillLVL.Visible = false;
                     IntermediateContent.Visible = true;
-                    SqlDataAdapter IPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + testlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                    SqlDataAdapter IPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
                     DataTable IPTable = new DataTable();
                     IPsqa.Fill(IPTable);
                     lblProgress.Text = IPTable.Rows[0][0].ToString() + "/100";
                 }
                 else
                 {
-                    SqlDataAdapter sqa3 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + testlbl.Text + "' and SkillLevel = '" + "Advanced" + "'", con);
+                    SqlDataAdapter sqa3 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Advanced" + "'", con);
                     DataTable deeetbl = new DataTable();
                     sqa3.Fill(deeetbl);
                     if (deeetbl.Rows.Count > 0)
                     {
                         lblSkillLVL.Visible = false;
+                        IntermediateContent.Visible = true;
                         AdvancedContent.Visible = true;
-                        SqlDataAdapter APsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + testlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                        SqlDataAdapter APsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
                         DataTable APTable = new DataTable();
                         APsqa.Fill(APTable);
-                        lblProgress.Text = APTable.Rows[0][0].ToString() + "/100";
+                        lblProgress.Text = APTable.Rows[0][0].ToString() + " Points Earned";
                     }
                     else
                     {
@@ -94,7 +95,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@SkillLevel", "Beginner");
                 sqlCmd.ExecuteNonQuery();
                 Clear();
@@ -108,14 +109,14 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@SkillLevel", "Intermediate");
                 sqlCmd.ExecuteNonQuery();
                 Clear();
                 StartProgress();
             }
         }
-
+        
         protected void btnAdvanced_Click(object sender, EventArgs e)
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -123,7 +124,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("SkillLevelAdd", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@SkillLevel", "Advanced");
                 sqlCmd.ExecuteNonQuery();
                 Clear();
@@ -133,6 +134,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected void btnBeginnerDribble_Click(object sender, EventArgs e)
         {
             IncrementProgress();
+            btnBeginnerDribble.Visible = false;
+            txtBeginnerDribble.Visible = true;
         }
                 void Clear()
         {
@@ -145,7 +148,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("StartProgress", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Progress", "0");
                 sqlCmd.ExecuteNonQuery();
                 Clear();
@@ -159,10 +162,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("GetProgress", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@UserID", testlbl.Text.Trim()); ;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
                 sqlCmd.ExecuteNonQuery();
                 Response.Redirect("~/SKILLS.aspx");
+
             }
+        }
+        protected void lnkVideo1_Click(object sender, EventArgs e)
+        {
+            btnBeginnerDribble.Visible = true;
         }
     }
 }

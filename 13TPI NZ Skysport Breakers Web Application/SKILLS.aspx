@@ -76,7 +76,7 @@ body, html {
                 </div>
 
             <p> l</p>
-        <asp:Label ID="testlbl" runat="server" Text="" Visible="false"></asp:Label>
+        <asp:Label ID="UserIDlbl" runat="server" Text="" Visible="false"></asp:Label>
          <asp:Label ID="ProgressValue" runat="server" Text="" Visible="false"></asp:Label>
         <asp:Label ID="lblSkillLVL" runat="server" Text="">
     <h3 class="w3-center">Please Choose your skill level</h3>
@@ -93,22 +93,27 @@ body, html {
             <div class="w3-center">
                 <p>Here is your progress- watch videos and complete tasks to gain points! work your way up to the next stage!</p>
             <asp:Label ID="lblProgress" runat="server" Text="/100" Font-Size="Large"></asp:Label>
+                <br/>
+                Beginner Section:
                 </div>
             <div class="w3-quarter">
-                <p class="w3-center">Learn to dribble! -- Click this button to try a dribbling task:</p>
-                <p class="w3-center"><asp:Button ID="btnBeginnerDribble" runat="server" Text="TASK" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerDribble_Click"/></p>
-                <p class="w3-center"><iframe height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe></p>
+                <p class="w3-center"><asp:Label ID="txtBeginnerDribble" runat="server" Text="Once you have finished watching the video, click the text at the bottom, then the button the appears and watch your progression!"></asp:Label></p>
+                <p class="w3-center"><asp:Button ID="btnBeginnerDribble" runat="server" Text="+5 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerDribble_Click" Visible="false"/></p>
+                <p class="w3-center"><asp:LinkButton ID="lnkVideo1" runat="server" OnClick="lnkVideo1_Click"><iframe height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe><br/>Once Done, Click Here</asp:LinkButton></p>
             </div>
             <div class="w3-quarter">
-                <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                  <iframe height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe>
             </div>
             </asp:Label>
         <asp:Label ID="IntermediateContent" runat="server" Text="" Visible ="false">
-
+           <div class="w3-center">
+               Intermediate Section:
+           </div>
         </asp:Label>
         <asp:Label ID="AdvancedContent" runat="server" Text="" Visible ="false">
-            
+            <div class="w3-center">
+                Advanced Section:
+            </div>
         </asp:Label>
     </form>
 </body>

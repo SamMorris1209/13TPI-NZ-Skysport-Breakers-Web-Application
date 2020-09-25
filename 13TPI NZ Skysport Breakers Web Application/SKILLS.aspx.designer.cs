@@ -78,13 +78,13 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button Home_Button;
 
         /// <summary>
-        /// testlbl control.
+        /// UserIDlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label testlbl;
+        protected global::System.Web.UI.WebControls.Label UserIDlbl;
 
         /// <summary>
         /// ProgressValue control.
@@ -150,6 +150,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Label lblProgress;
 
         /// <summary>
+        /// txtBeginnerDribble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtBeginnerDribble;
+
+        /// <summary>
         /// btnBeginnerDribble control.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBeginnerDribble;
+
+        /// <summary>
+        /// lnkVideo1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkVideo1;
 
         /// <summary>
         /// IntermediateContent control.
