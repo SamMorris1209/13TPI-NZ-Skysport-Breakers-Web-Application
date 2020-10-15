@@ -15,7 +15,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected void Page_Load(object sender, EventArgs e)
         {
             Userlbl.Text = (string)Session["GetUsername"];
-            Passlbl.Text = (string)Session["GetPassword"];          
+            Passlbl.Text = (string)Session["GetPassword"];
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
@@ -26,7 +26,25 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     UserIDlbl.Text = dtbl.Rows[0][0].ToString();
-                }           
+                }
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("GetVideos", sqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
+                DataTable Vdtbl = new DataTable();
+                sqlDa.Fill(Vdtbl);
+                Video1Check.Text = Vdtbl.Rows[0][1].ToString();
+                Video2Check.Text = Vdtbl.Rows[0][2].ToString();
+                Video3Check.Text = Vdtbl.Rows[0][3].ToString();
+                Video4Check.Text = Vdtbl.Rows[0][4].ToString();
+                Video5Check.Text = Vdtbl.Rows[0][5].ToString();
+                Video6Check.Text = Vdtbl.Rows[0][6].ToString();
+                Video7Check.Text = Vdtbl.Rows[0][7].ToString();
+                Video8Check.Text = Vdtbl.Rows[0][8].ToString();
+                Video9Check.Text = Vdtbl.Rows[0][9].ToString();
+            }
             SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter sqa = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Beginner" + "'", con);
             System.Data.DataTable detbl = new System.Data.DataTable();
@@ -76,6 +94,11 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                         IntermediateContent.Visible = false;
                     }
                 }
+            }
+            if(Video1Check.Text == "True")
+            {
+                btnBeginnerDribble.Enabled = false;
+                btnBeginnerDribble.Text = "Points gained!";
             }
         }
         protected void Back_Button_Click(object sender, EventArgs e)
@@ -133,9 +156,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         }
         protected void btnBeginnerDribble_Click(object sender, EventArgs e)
         {
+            Video1Watch();
             IncrementProgress();
-            btnBeginnerDribble.Visible = false;
-            txtBeginnerDribble.Visible = true;
         }
                 void Clear()
         {
@@ -168,9 +190,16 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
             }
         }
-        protected void lnkVideo1_Click(object sender, EventArgs e)
+        void Video1Watch()
         {
-            btnBeginnerDribble.Visible = true;
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video1Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
         }
     }
 }

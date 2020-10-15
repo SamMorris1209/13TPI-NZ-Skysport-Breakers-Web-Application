@@ -78,6 +78,87 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button Home_Button;
 
         /// <summary>
+        /// Video1Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video1Check;
+
+        /// <summary>
+        /// Video2Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video2Check;
+
+        /// <summary>
+        /// Video3Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video3Check;
+
+        /// <summary>
+        /// Video4Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video4Check;
+
+        /// <summary>
+        /// Video5Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video5Check;
+
+        /// <summary>
+        /// Video6Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video6Check;
+
+        /// <summary>
+        /// Video7Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video7Check;
+
+        /// <summary>
+        /// Video8Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video8Check;
+
+        /// <summary>
+        /// Video9Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Video9Check;
+
+        /// <summary>
         /// UserIDlbl control.
         /// </summary>
         /// <remarks>
@@ -166,15 +247,6 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBeginnerDribble;
-
-        /// <summary>
-        /// lnkVideo1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkVideo1;
 
         /// <summary>
         /// IntermediateContent control.

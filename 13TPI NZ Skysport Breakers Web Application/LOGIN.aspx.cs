@@ -47,6 +47,22 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     SignupMessage.Visible = true;
                     Clear();
                 }
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("TrackingUserAdd", sqlCon);
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@Video1", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video2", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video3", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video4", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video5", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video6", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video7", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video8", "0");
+                    sqlCmd.Parameters.AddWithValue("@Video9", "0");
+                    sqlCmd.ExecuteNonQuery();
+                }
             }
         }
         void Clear()
