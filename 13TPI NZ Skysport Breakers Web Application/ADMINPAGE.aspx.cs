@@ -83,10 +83,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(hfUserID.Value));
                 sqlCmd.ExecuteNonQuery();
+                SqlCommand SqlC = new SqlCommand("DeleteTrackerByID", sqlCon2);
+                SqlC.CommandType = CommandType.StoredProcedure;
+                SqlC.Parameters.AddWithValue("@UserID", Convert.ToInt32(hfUserID.Value));
+                SqlC.ExecuteNonQuery();
                 sqlCon2.Close();
                 Clear();
                 lblSuccessMessage.Text = "Deleted  Successfully";
-        }
+            }
+
         }
 
         protected void btnReturn_Click(object sender, EventArgs e)
