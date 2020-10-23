@@ -109,7 +109,7 @@ body, html {
     <h1>Do you want to be a great Basketball player like the Breakers?</h1>
         <h2>It all comes down to two main reasons:</h2>
         <h3>Refining your skills:</h3>
-        <p>Being good at Basketball does not come easy- putting in the time and effort is what matters. Either trying to learn skills for the first time, or trying to perfect already known techniques, we've got you covered. Just simply click the link below, choose your skill level and our application will help you improve as best as possible!</p>
+        <p>Being good at Basketball does not come easy- putting in the time and effort is what matters. Either trying to learn skills for the first time, or trying to perfect already known techniques, we've got you covered. Just simply click the link below, choose your skill level and our application will help you improve as best as possible! **REMINDER** - When in use of the app, be honest that you have watched each video or done each task before claiming the points. Improvement comes much easier this way!</p>
         <asp:Button ID="skills_button" runat="server" Text="Practice your Basketball!" BackColor="Black" BorderColor="White" BorderStyle="Outset" ForeColor="White" Height="37px" Width="237px" Font-Size="Large" OnClick="skills_button_Click" />
         <p><asp:Label ID="lblErrorMsg" runat="server" Text="Please sign in or sign up to continue" ForeColor="Red" Visible="False"></asp:Label></p>
         <h3>Maintaining a healthy diet:</h3>

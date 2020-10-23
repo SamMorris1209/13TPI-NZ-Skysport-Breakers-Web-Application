@@ -159,6 +159,60 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Label Video9Check;
 
         /// <summary>
+        /// RulesCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RulesCheck;
+
+        /// <summary>
+        /// ThreePointersCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ThreePointersCheck;
+
+        /// <summary>
+        /// Task1Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Task1Check;
+
+        /// <summary>
+        /// Task2Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Task2Check;
+
+        /// <summary>
+        /// Task3Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Task3Check;
+
+        /// <summary>
+        /// Task4Check control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Task4Check;
+
+        /// <summary>
         /// UserIDlbl control.
         /// </summary>
         /// <remarks>
@@ -175,6 +229,15 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ProgressValue;
+
+        /// <summary>
+        /// lblLevel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLevel;
 
         /// <summary>
         /// lblSkillLVL control.
@@ -249,6 +312,60 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button btnBeginnerDribble;
 
         /// <summary>
+        /// txtBeginnerPassing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtBeginnerPassing;
+
+        /// <summary>
+        /// btnBeginnerPassing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBeginnerPassing;
+
+        /// <summary>
+        /// txtBeginnerShooting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtBeginnerShooting;
+
+        /// <summary>
+        /// btnBeginnerShooting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBeginnerShooting;
+
+        /// <summary>
+        /// txtRules control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtRules;
+
+        /// <summary>
+        /// btnRules control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRules;
+
+        /// <summary>
         /// IntermediateContent control.
         /// </summary>
         /// <remarks>
@@ -258,6 +375,78 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Label IntermediateContent;
 
         /// <summary>
+        /// txtIntermediatePositioning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtIntermediatePositioning;
+
+        /// <summary>
+        /// btnIntermediatePositioning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIntermediatePositioning;
+
+        /// <summary>
+        /// txtIntermediateTricks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtIntermediateTricks;
+
+        /// <summary>
+        /// btnIntermediateTricks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIntermediateTricks;
+
+        /// <summary>
+        /// txtIntermediateHandling control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtIntermediateHandling;
+
+        /// <summary>
+        /// btnIntermediateHandlng control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnIntermediateHandlng;
+
+        /// <summary>
+        /// txt3Pointers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt3Pointers;
+
+        /// <summary>
+        /// btn3Pointers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn3Pointers;
+
+        /// <summary>
         /// AdvancedContent control.
         /// </summary>
         /// <remarks>
@@ -265,5 +454,113 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label AdvancedContent;
+
+        /// <summary>
+        /// txtDunking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtDunking;
+
+        /// <summary>
+        /// btnDunking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDunking;
+
+        /// <summary>
+        /// txtADribbling control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtADribbling;
+
+        /// <summary>
+        /// btnADribbling control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnADribbling;
+
+        /// <summary>
+        /// txtAPositioning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtAPositioning;
+
+        /// <summary>
+        /// btnAPositioning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAPositioning;
+
+        /// <summary>
+        /// txtThreePointerP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtThreePointerP;
+
+        /// <summary>
+        /// btnThreePointerP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnThreePointerP;
+
+        /// <summary>
+        /// txtAPassing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtAPassing;
+
+        /// <summary>
+        /// btnAPassing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAPassing;
+
+        /// <summary>
+        /// txtBlocking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtBlocking;
+
+        /// <summary>
+        /// btnBlocking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBlocking;
     }
 }

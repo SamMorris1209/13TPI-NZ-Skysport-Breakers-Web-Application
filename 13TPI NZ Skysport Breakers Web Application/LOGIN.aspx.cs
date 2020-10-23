@@ -63,6 +63,19 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     sqlCmd.Parameters.AddWithValue("@Video9", "0");
                     sqlCmd.ExecuteNonQuery();
                 }
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("TaskTrackingUserAdd", sqlCon);
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@Rules", "0");
+                    sqlCmd.Parameters.AddWithValue("@ThreePointers", "0");
+                    sqlCmd.Parameters.AddWithValue("@Task1", "0");
+                    sqlCmd.Parameters.AddWithValue("@Task2", "0");
+                    sqlCmd.Parameters.AddWithValue("@Task3", "0");
+                    sqlCmd.Parameters.AddWithValue("@Task4", "0");
+                    sqlCmd.ExecuteNonQuery();
+                }
             }
         }
         void Clear()

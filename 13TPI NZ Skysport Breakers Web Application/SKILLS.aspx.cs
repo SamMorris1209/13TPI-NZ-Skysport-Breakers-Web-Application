@@ -26,6 +26,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     UserIDlbl.Text = dtbl.Rows[0][0].ToString();
+                    lblLevel.Text = dtbl.Rows[0][5].ToString();
+                    
                 }
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -45,6 +47,21 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 Video8Check.Text = Vdtbl.Rows[0][8].ToString();
                 Video9Check.Text = Vdtbl.Rows[0][9].ToString();
             }
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("GetTasks", sqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
+                DataTable Tdtbl = new DataTable();
+                sqlDa.Fill(Tdtbl);
+                RulesCheck.Text = Tdtbl.Rows[0][1].ToString();
+                ThreePointersCheck.Text = Tdtbl.Rows[0][2].ToString();
+                Task1Check.Text = Tdtbl.Rows[0][3].ToString();
+                Task2Check.Text = Tdtbl.Rows[0][4].ToString();
+                Task3Check.Text = Tdtbl.Rows[0][5].ToString();
+                Task4Check.Text = Tdtbl.Rows[0][6].ToString();
+            }
             SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter sqa = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Beginner" + "'", con);
             System.Data.DataTable detbl = new System.Data.DataTable();
@@ -53,6 +70,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             {
                 lblSkillLVL.Visible = false;
                 BeginnerContent.Visible = true;
+                IntermediateContent.Visible = false;
+                AdvancedContent.Visible = false;
                 SqlDataAdapter BPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
                 DataTable BPTable = new DataTable();
                 BPsqa.Fill(BPTable);
@@ -67,6 +86,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 {
                     lblSkillLVL.Visible = false;
                     IntermediateContent.Visible = true;
+                    AdvancedContent.Visible = false;
                     SqlDataAdapter IPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
                     DataTable IPTable = new DataTable();
                     IPsqa.Fill(IPTable);
@@ -80,6 +100,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     if (deeetbl.Rows.Count > 0)
                     {
                         lblSkillLVL.Visible = false;
+                        BeginnerContent.Visible = true;
                         IntermediateContent.Visible = true;
                         AdvancedContent.Visible = true;
                         SqlDataAdapter APsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
@@ -95,10 +116,66 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                     }
                 }
             }
+            if(lblProgress.Text == "100/100")
+            {
+                UpgradeAdvanced();
+                UpgradeIntermediate();
+                ResetProgress();
+            }
             if(Video1Check.Text == "True")
             {
                 btnBeginnerDribble.Enabled = false;
-                btnBeginnerDribble.Text = "Points gained!";
+                btnBeginnerDribble.Text = "Points Gained!";
+            }
+            if(Video2Check.Text == "True")
+            {
+                btnBeginnerPassing.Enabled = false;
+                btnBeginnerPassing.Text = "Points Gained!";
+            }
+            if (Video3Check.Text == "True")
+            {
+                btnBeginnerShooting.Enabled = false;
+                btnBeginnerShooting.Text = "Points Gained!";
+            }
+            if (Video4Check.Text == "True")
+            {
+                btnIntermediatePositioning.Enabled = false;
+                btnIntermediatePositioning.Text = "Points Gained!";
+            }
+            if (Video5Check.Text == "True")
+            {
+                btnIntermediateTricks.Enabled = false;
+                btnIntermediateTricks.Text = "Points Gained!";
+            }
+            if (Video6Check.Text == "True")
+            {
+                btnIntermediateHandlng.Enabled = false;
+                btnIntermediateHandlng.Text = "Points Gained!";
+            }
+            if (Video7Check.Text == "True")
+            {
+                btnDunking.Enabled = false;
+                btnDunking.Text = "Points Gained!";
+            }
+            if (Video8Check.Text == "True")
+            {
+                btnADribbling.Enabled = false;
+                btnADribbling.Text = "Points Gained!";
+            }
+            if (Video9Check.Text == "True")
+            {
+                btnAPositioning.Enabled = false;
+                btnAPositioning.Text = "Points Gained!";
+            }
+            if (RulesCheck.Text == "True")
+            {
+                btnRules.Enabled = false;
+                btnRules.Text = "Points Gained!";
+            }
+            if (ThreePointersCheck.Text == "True")
+            {
+                btn3Pointers.Enabled = false;
+                btn3Pointers.Text = "Points Gained!";
             }
         }
         protected void Back_Button_Click(object sender, EventArgs e)
@@ -159,7 +236,75 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             Video1Watch();
             IncrementProgress();
         }
-                void Clear()
+        protected void btnBeginnerPassing_Click(object sender, EventArgs e)
+        {
+            Video2Watch();
+            IncrementProgress();
+        }
+        protected void btnBeginnerShooting_Click(object sender, EventArgs e)
+        {
+            Video3Watch();
+            IncrementProgress();
+        }
+        protected void btnIntermediatePositioning_Click(object sender, EventArgs e)
+        {
+            Video4Watch();
+            IncrementProgressMORE();
+        }
+        protected void btnIntermediateTricks_Click(object sender, EventArgs e)
+        {
+            Video5Watch();
+            IncrementProgress();
+        }
+        protected void btnIntermediateHandling_Click(object sender, EventArgs e)
+        {
+            Video6Watch();
+            IncrementProgressMORE();
+        }
+        protected void btn3Pointers_Click(object sender, EventArgs e)
+        {
+            ThreePointersWatch();
+            IncrementProgress();
+        }
+        protected void btnRules_Click(object sender, EventArgs e)
+        {
+            ReadRules();
+            IncrementProgressMOST();
+        }
+        protected void btnDunking_Click(object sender, EventArgs e)
+        {
+            Video7Watch();
+            IncrementProgressMOST();
+        }
+        protected void btnADribbling_Click(object sender, EventArgs e)
+        {
+            Video8Watch();
+            IncrementProgressMOST();
+        }
+        protected void btnAPositioning_Click(object sender, EventArgs e)
+        {
+            Video9Watch();
+            IncrementProgressMOST();
+        }
+        protected void btnThreePointerP_Click(object sender, EventArgs e)
+        {
+            IncrementProgressNoRedirect();
+            btnThreePointerP.Enabled = false;
+            btnThreePointerP.Text = "Come back later to do this again!";
+        }
+        protected void btnAPassing_Click(object sender, EventArgs e)
+        {
+            IncrementProgressNoRedirect();
+            btnAPassing.Enabled = false;
+            btnAPassing.Text = "Come back later to do this again!";
+        }
+        protected void btnBlocking_Click(object sender, EventArgs e)
+        {
+            IncrementProgressNoRedirect();
+            btnBlocking.Enabled = false;
+            btnBlocking.Text = "Come back later to do this again!";
+        }
+        void Clear()
         {
             hfUserID.Value = "";        
         }
@@ -190,12 +335,199 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
             }
         }
+        void IncrementProgressNoRedirect()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("GetProgress", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+
+            }
+        }
+        void UpgradeIntermediate()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("UpgradeIntermediate", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.Parameters.AddWithValue("@SkillLevel", lblLevel.Text.Trim());
+                sqlCmd.ExecuteNonQuery();
+
+            }
+        }
+        void UpgradeAdvanced()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("UpgradeAdvanced", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.Parameters.AddWithValue("@SkillLevel", lblLevel.Text.Trim());
+                sqlCmd.ExecuteNonQuery();
+
+            }
+        }
+            void ResetProgress()
+            {
+                using (SqlConnection sqlCon = new SqlConnection(connectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("ResetProgress", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                    sqlCmd.ExecuteNonQuery();
+                    Response.Redirect("~/SKILLS.aspx");
+
+                }
+            }
+        void IncrementProgressMORE()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("GetProgressMORE", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+                Response.Redirect("~/SKILLS.aspx");
+
+            }
+        }
+        void IncrementProgressMOST()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("GetProgressMOST", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+                Response.Redirect("~/SKILLS.aspx");
+
+            }
+        }
         void Video1Watch()
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
                 SqlCommand sqlCmd = new SqlCommand("Video1Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video2Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video2Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video3Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video3Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video4Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video4Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video5Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video5Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video6Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video6Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video7Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video7Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video8Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video8Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void Video9Watch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("Video9Watch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void ReadRules()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("RulesWatch", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+        void ThreePointersWatch()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("ThreePointersWatch", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim()); ;
                 sqlCmd.ExecuteNonQuery();
