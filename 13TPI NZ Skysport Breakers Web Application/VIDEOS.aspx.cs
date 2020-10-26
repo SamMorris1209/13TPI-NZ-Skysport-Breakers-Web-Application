@@ -16,7 +16,24 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 login_button.Text = "Welcome " + (string)Session["GetUsername"];
                 login_button.Enabled = false;
                 logout_button.Visible = true;
+                Label2.Visible = true;
+                Label1.Visible = true;
+                Label3.Visible = true;
+                Label4.Visible = true;
+                Label5.Visible = true;
+                Label6.Visible = true;
+                Label7.Visible = true;
+                Label8.Visible = true;
+                Label9.Visible = true;
+                Label10.Visible = true;
+                Label11.Visible = true;
+                Label12.Visible = true;
+                Button3.Visible = false;
             }
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LOGIN.aspx");
         }
 
         protected void Home_Button_Click(object sender, EventArgs e)

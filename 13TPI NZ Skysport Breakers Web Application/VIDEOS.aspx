@@ -106,7 +106,228 @@ body, html {
         &nbsp;</p>
         <img alt="" class="auto-style1" src="IMAGES/Sky-Sport-Breakers-Logo-White.png" style="background-image:url(IMAGES/spark-arena.jfif);margin-left:auto;margin-right:auto;width:101%"/>
 
-    </form>
-    </body>
+    <div class="w3-quarter">
+<h2>Learn to play like the breakers!</h2>
+<p>Fine tune your basketball skills to become a basketball legend with these easy to learn basketball videos. 
+    <br />
+    Sign in to save your progress and get recommendations.
+    <br />
+    <br />
+    <br />
+</p>
+</div>
 
-    </html>
+ 
+
+<div style="margin-bottom: 10px;" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Basketball Rules</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/wYjp2zoqQrs" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+  </div>
+</div>
+
+ 
+
+<div style="margin-bottom: 10px;" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+        <h3>Beginners Guide to Dribbling</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/Ee0-O0FKDf0" frameborder="0" allowfullscreen="true"></iframe>
+
+ 
+
+  </div>
+  </div>
+</div>
+
+ 
+
+<div style="margin-bottom: 10px;"class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+        <h3>Beginners Guide to Shooting</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/BloEnNbz4qk" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+  </div>
+</div>
+       
+                
+<div></div>
+<div id="div" style="margin-bottom: 10px;" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</div>
+                <div style="margin-bottom: 10px;" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+        <h3>Beginners Guide to Dribbling</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/Ee0-O0FKDf0" frameborder="0" allowfullscreen="true"></iframe>
+
+ 
+
+  </div>
+  </div>
+</div>
+                <div style="margin-bottom: 10px;" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Basketball Rules</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/wYjp2zoqQrs" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+  </div>
+</div>
+                <div style="margin-bottom: 10px;"class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+        <h3>Beginners Guide to Shooting</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/BloEnNbz4qk" frameborder="0" allowfullscreen="true"></iframe>
+  </div>
+  </div>
+</div>
+           <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Sign up to view more!" style="background-color:white; color:dodgerblue; border: 2px solid dodgerblue;" class="w3-button w3-left"/>     
+      
+<asp:Label ID="Label1" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Cross over dribble</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/2Q5DkSz9FlU" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label2" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+<asp:Label ID="Label3" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label4" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+<asp:Label ID="Label5" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label6" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+<asp:Label ID="Label7" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label8" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+<asp:Label ID="Label9" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label10" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+<asp:Label ID="Label11" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">                
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+  </div>
+</asp:Label>             
+
+ 
+
+<asp:Label ID="Label12" runat="server" style="margin-bottom: 10px;" Visible="False" class="w3-quarter">
+<div class="w3-card w3-white">
+  <div class="w3-container">
+  <h3>Beginners tips for Passing</h3>
+  <iframe width="425" height="270" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen navigateurl="https://www.youtube.com/embed/PukmYnApL2Y"></iframe>
+  </div>
+</div>
+</asp:Label>
+
+ 
+
+</div>
+</form>
+
+ 
+
+</body>
+</html>
