@@ -24,6 +24,10 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.ButtonClass
+{
+    cursor: pointer;
+}
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
@@ -69,26 +73,23 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
     <a class="w3-bar-item " onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
-      <asp:Button ID="Home_Button" runat="server" OnClick="Home_Button_Click" Text="HOME" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" />
+      <asp:Button ID="Home_Button" runat="server" OnClick="Home_Button_Click" CssClass="ButtonClass" Text="HOME" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" />
       </a>&nbsp;
       <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i class="fa fa-user"></i>
-          <asp:Button ID="Players_Button" runat="server" OnClick="Players_Button_Click" Text="PLAYERS" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" /></a>
+          <asp:Button ID="Players_Button" runat="server" OnClick="Players_Button_Click" CssClass="ButtonClass" Text="PLAYERS" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" /></a>
     
-      <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/GOODDATE.png" style="width:20px;height:20px;"></i>
-          <asp:Button ID="Schedule_Button" runat="server" OnClick="Schedule_Button_Click" Text="SCHEDULE" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/></a>
-   
       <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/BBALL.png" style="width:20px;height:20px;" /></i>
-          <asp:Button ID="Tips_Button" runat="server" Text="TIPS AND TRICKS" OnClick="Tips_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/></a>
+          <asp:Button ID="Tips_Button" runat="server" Text="TIPS AND TRICKS" OnClick="Tips_Button_Click" CssClass="ButtonClass" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/></a>
    
       <a class="w3-bar-item w3-hide-small" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white"><i><img src="IMAGES/vidoes.png" style="width:20px;height:20px;" /></i> 
-          <asp:Button ID="Videos_Button" runat="server" Text="VIDEOS" OnClick="Videos_Button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/> </a>
+          <asp:Button ID="Videos_Button" runat="server" Text="VIDEOS" OnClick="Videos_Button_Click" CssClass="ButtonClass" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/> </a>
    
         <a class="w3-bar-item w3-hide-small w3-right" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
-          <asp:Button ID="logout_button" runat="server" Text="LOGOUT" OnClick="logout_button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Visible="False" /></a>
+          <asp:Button ID="logout_button" runat="server" Text="LOGOUT" OnClick="logout_button_Click" CssClass="ButtonClass" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Visible="False" /></a>
 
 
       <a class="w3-bar-item w3-hide-small w3-right" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" style="color:white">
-          <asp:Button ID="login_button" runat="server" Text="LOGIN/REGISTER" OnClick="login_button_Click" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/>
+          <asp:Button ID="login_button" runat="server" Text="LOGIN/REGISTER" OnClick="login_button_Click" CssClass="ButtonClass" BackColor="Black" BorderStyle="None" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'"/>
     </a>
   </div>
 
@@ -110,7 +111,7 @@ body, html {
         <h2>It all comes down to two main reasons:</h2>
         <h3>Refining your skills:</h3>
         <p>Being good at Basketball does not come easy- putting in the time and effort is what matters. Either trying to learn skills for the first time, or trying to perfect already known techniques, we've got you covered. Just simply click the link below, choose your skill level and our application will help you improve as best as possible! **REMINDER** - When in use of the app, be honest that you have watched each video or done each task before claiming the points. Improvement comes much easier this way!</p>
-        <asp:Button ID="skills_button" runat="server" Text="Practice your Basketball!" BackColor="Black" BorderColor="White" BorderStyle="Outset" ForeColor="White" Height="37px" Width="237px" Font-Size="Large" OnClick="skills_button_Click" />
+        <asp:Button ID="skills_button" runat="server" Text="Use our coaching app- Practice your Basketball!" BackColor="Black" BorderColor="White" BorderStyle="Outset" ForeColor="White" Height="159px" Width="976px" Font-Size="Large" OnClick="skills_button_Click" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" CssClass="ButtonClass"/>
         <p><asp:Label ID="lblErrorMsg" runat="server" Text="Please sign in or sign up to continue" ForeColor="Red" Visible="False"></asp:Label></p>
         <h3>Maintaining a healthy diet:</h3>
         <p>Eating well is another very important aspect of improvement. If you don't eat well, it could negatively impact your fitness level and lead to little improvement. The links provided below can help you either start or maintain a healthy way of eating. Good Luck!</p>

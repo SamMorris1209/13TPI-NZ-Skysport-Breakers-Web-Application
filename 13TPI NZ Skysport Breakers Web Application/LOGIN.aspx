@@ -36,6 +36,10 @@ body, html {
   background-image: url("/w3images/parallax2.jpg");
   min-height: 400px;
 }
+.ButtonClass
+{
+    cursor: pointer;
+}
 
 /* Third image (Contact) */
 .bgimg-3 {
@@ -60,7 +64,7 @@ body, html {
 
 <div class="w3-top" style="background-color:black">
   <div class="w3-bar" id="myNavbar">
-      <img src="IMAGES/Sky-Sport-Breakers-Logo-White.png" style="width:10%;height:10%"/> <asp:Button ID="Button1" runat="server" Text="HOME" BackColor="Black" BorderStyle="None" Font-Bold="True" ForeColor="White" Height="47px" Width="116px" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='black'"  onclick="HomeLogo_Click" />
+      <img src="IMAGES/Sky-Sport-Breakers-Logo-White.png" style="width:10%;height:10%"/> <asp:Button ID="Button1" runat="server" Text="HOME" BackColor="Black" BorderStyle="None" Font-Bold="True" ForeColor="White" Height="47px" Width="116px" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='black'"  onclick="HomeLogo_Click" CssClass="ButtonClass" />
   </div> 
 </div>
          <div style="background-color:black; margin-bottom: 19px;">
@@ -78,8 +82,8 @@ body, html {
         <asp:TextBox ID="txtPasswordIn" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);" TextMode="Password"></asp:TextBox>
             </p>
              <p class="w3-center">
-             <asp:Button ID="btnSignIn" runat="server" Text="Sign In!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignIn_Click" />
-                 <asp:Label ID="Label10" runat="server" Font-Size="Large" ForeColor="Red" Height="0px" Text="Password is incorrect" Visible="False"></asp:Label>
+             <asp:Button ID="btnSignIn" runat="server" Text="Sign In!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" CssClass="ButtonClass" OnClick="btnSignIn_Click" />
+                 <asp:Label ID="Label10" runat="server" Font-Size="Large" ForeColor="Red" Height="0px" Text="Password is incorrect or User Does not exist" Visible="False"></asp:Label>
                  </p>
         <p style="color:white">
             ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -101,14 +105,16 @@ body, html {
             </p>
           <asp:Label ID="Label6" runat="server" Text="Password:" Font-Bold="True" Font-Names="Segoe UI Black" Font-Size="X-Large" ForeColor="White"></asp:Label>
         <p class="w3-center">
-        <asp:TextBox ID="txtPassword" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
-            </p>
+        <asp:TextBox ID="txtPassword" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);" TextMode="Password"></asp:TextBox> </p>
+        <p class="w3-center">
+             <asp:Label ID="Label12" runat="server" Text="Please ensure you password consists of at least 6 characters" ForeColor="Red" Visible="false"></asp:Label>
+           </p>
         <asp:Label ID="Label7" runat="server" Text="Confirm Password:" Font-Bold="True" Font-Names="Segoe UI Black" Font-Size="X-Large" ForeColor="White"></asp:Label>
         <p class="w3-center">
-        <asp:TextBox ID="txtConfirmpassword" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
+        <asp:TextBox ID="txtConfirmpassword" runat="server" Height="55px" Width="575px" BackColor="#F0E6C5" Font-Size="Large" onkeydown = "return (event.keyCode!=13);" TextMode="Password"></asp:TextBox>
             </p>
               <p class="w3-center">
-             <asp:Button ID="btnSignUp" runat="server" Text="Sign Up!" BorderStyle="Groove" Font-Bold="False" Font-Size="Large" OnClick="btnSignUp_Click" /><asp:Label ID="SignupMessage" runat="server" Text="Signed up successfully" ForeColor="Red" Visible="false"></asp:Label>
+             <asp:Button ID="btnSignUp" runat="server" Text="Sign Up!" BorderStyle="Groove" Font-Bold="False" CssClass="ButtonClass" Font-Size="Large" OnClick="btnSignUp_Click" /><asp:Label ID="SignupMessage" runat="server" Text="Signed up successfully" ForeColor="Red" Visible="false"></asp:Label>
                  </p>
         </div>
         <asp:HiddenField ID="HFSearch" runat="server" />

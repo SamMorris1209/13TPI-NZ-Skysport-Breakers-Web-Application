@@ -118,22 +118,22 @@ body, html {
                 </div>
             <div class="w3-quarter">
                 <p class="w3-center"><asp:Label ID="txtBeginnerDribble" runat="server" Text="Beginner's guide to dribbling- Once you have finished watching the video, click the button and watch your progression! Note: once the button has been used, it cannot be used again!"></asp:Label></p>
-                <p class="w3-center"><asp:Button ID="btnBeginnerDribble" runat="server" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerDribble_Click"/></p>
-                <p class="w3-center"><iframe height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe></p>
+                <p class="w3-center"><asp:Button ID="btnBeginnerDribble" runat="server" Visible="false" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerDribble_Click"/></p>
+                <p class="w3-center"><iframe id="video" height="270" width="420" src="https://www.youtube.com/embed/CMQp0bwjokw" frameborder="0" allowfullscreen></iframe></p>
             </div>
             <div class="w3-quarter">
                 <p class="w3-center"><asp:Label ID="txtBeginnerPassing" runat="server" Text="Beginner's guide to passing- Once you have finished watching the video, click the button and watch your progression! Note: once the button has been used, it cannot be used again!"></asp:Label></p>
-                <p class="w3-center"><asp:Button ID="btnBeginnerPassing" runat="server" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerPassing_Click"/></p>
+                <p class="w3-center"><asp:Button ID="btnBeginnerPassing" runat="server" Visible="false" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerPassing_Click"/></p>
                 <p class="w3-center"><iframe height="270" width="420" src="https://www.youtube.com/embed/PukmYnApL2Y" frameborder="0" allowfullscreen></iframe></p>
             </div>
             <div class="w3-quarter">
                 <p class="w3-center"><asp:Label ID="txtBeginnerShooting" runat="server" Text="Beginner's guide to shooting- Once you have finished watching the video, click the button and watch your progression! Note: once the button has been used, it cannot be used again!"></asp:Label></p>
-                <p class="w3-center"><asp:Button ID="btnBeginnerShooting" runat="server" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerShooting_Click"/></p>
+                <p class="w3-center"><asp:Button ID="btnBeginnerShooting" runat="server" Visible="false" Text="+20 Progress" BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnBeginnerShooting_Click"/></p>
                 <p class="w3-center"><iframe height="270" width="420" src="https://www.youtube.com/embed/BloEnNbz4qk" frameborder="0" allowfullscreen></iframe></p>
             </div>
             <div class="w3-quarter">
                 <p class="w3-center"><asp:Label ID="txtRules" runat="server" Text="To learn to play basketball, It is also very important that you learn the rules of the game. Consider reading the rules available below to get some understanding of the game!"></asp:Label></p>
-                <p class="w3-center"><asp:Button ID="btnRules" runat="server" Text="+40 Progress"  BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnRules_Click"/></p>
+                <p class="w3-center"><asp:Button ID="btnRules" runat="server" Visible="false" Text="+40 Progress"  BackColor="Black" BorderStyle="Solid" ForeColor="White" onmouseover="this.style.backgroundColor='#0085bd'" onmouseout="this.style.backgroundColor='Black'" Font-Size="Larger" OnClick="btnRules_Click"/></p>
                 <iframe height="270" width="420" src="https://www.youtube.com/embed/oyjYgmsM00Q" frameborder="0" allowfullscreen></iframe>
             </div>
             </asp:Label>

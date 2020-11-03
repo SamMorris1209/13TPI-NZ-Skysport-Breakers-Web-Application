@@ -11,7 +11,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["IfSignedIn"] == "true")
+            if ((string)Session["IfSignedIn"] == "true") //checks if the user is signed in and displays different information on the navbar if they are
             {
                 login_button.Text = "Welcome " + (string)Session["GetUsername"];
                 login_button.Enabled = false;
@@ -56,7 +56,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
         protected void skills_button_Click(object sender, EventArgs e)
         {
-            if ((string)Session["IfSignedIn"] != "true")
+            if ((string)Session["IfSignedIn"] != "true") //button to get into the application, only lets you in if you are signed in
             {
                 lblErrorMsg.Visible = true;
             }

@@ -42,15 +42,6 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
         protected global::System.Web.UI.WebControls.Button Players_Button;
 
         /// <summary>
-        /// Schedule_Button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Schedule_Button;
-
-        /// <summary>
         /// Tips_Button control.
         /// </summary>
         /// <remarks>

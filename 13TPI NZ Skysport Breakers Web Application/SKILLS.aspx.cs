@@ -19,20 +19,20 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("GetUserID", sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("GetUserID", sqlCon); //runs GetUserID query which gets the userID for the currently logged user
                     sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                     sqlDa.SelectCommand.Parameters.AddWithValue("@Username", Userlbl.Text);
-                    sqlDa.SelectCommand.Parameters.AddWithValue("@Password", Passlbl.Text);
+                    sqlDa.SelectCommand.Parameters.AddWithValue("@Password", Passlbl.Text); //uses above parameters to find this ID
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     UserIDlbl.Text = dtbl.Rows[0][0].ToString();
-                    lblLevel.Text = dtbl.Rows[0][5].ToString();
+                    lblLevel.Text = dtbl.Rows[0][5].ToString(); //puts UserID in a label and skill level into another label from the logged user
                     
                 }
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("GetVideos", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("GetVideos", sqlCon); //similar query to getuserid but gets the bit values of each video to see if watched
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlDa.SelectCommand.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 DataTable Vdtbl = new DataTable();
@@ -45,12 +45,12 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 Video6Check.Text = Vdtbl.Rows[0][6].ToString();
                 Video7Check.Text = Vdtbl.Rows[0][7].ToString();
                 Video8Check.Text = Vdtbl.Rows[0][8].ToString();
-                Video9Check.Text = Vdtbl.Rows[0][9].ToString();
+                Video9Check.Text = Vdtbl.Rows[0][9].ToString(); //puts each value into its respective label
             }
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("GetTasks", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("GetTasks", sqlCon); //same as getvideos but for the tasks
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlDa.SelectCommand.Parameters.AddWithValue("@UserID", UserIDlbl.Text.Trim());
                 DataTable Tdtbl = new DataTable();
@@ -60,19 +60,21 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 Task1Check.Text = Tdtbl.Rows[0][3].ToString();
                 Task2Check.Text = Tdtbl.Rows[0][4].ToString();
                 Task3Check.Text = Tdtbl.Rows[0][5].ToString();
-                Task4Check.Text = Tdtbl.Rows[0][6].ToString();
+                Task4Check.Text = Tdtbl.Rows[0][6].ToString(); //puts each value into its respective label
             }
             SqlConnection con = new SqlConnection(connectionString);
             SqlDataAdapter sqa = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Beginner" + "'", con);
+            //runs through the sql to find if the logged user is a beginner
             System.Data.DataTable detbl = new System.Data.DataTable();
             sqa.Fill(detbl);
-            if (detbl.Rows.Count > 0)
+            if (detbl.Rows.Count > 0) // if they are a beginner
             {
                 lblSkillLVL.Visible = false;
                 BeginnerContent.Visible = true;
                 IntermediateContent.Visible = false;
                 AdvancedContent.Visible = false;
                 SqlDataAdapter BPsqa = new SqlDataAdapter("Select Progress From tblUser where UserID = '" + UserIDlbl.Text + "' and Username = '" + Userlbl.Text + "'", con);
+                ///gets their current progress
                 DataTable BPTable = new DataTable();
                 BPsqa.Fill(BPTable);
                 lblProgress.Text = BPTable.Rows[0][0].ToString() + "/100";
@@ -80,6 +82,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             else
             {
                 SqlDataAdapter sqa2 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Intermediate" + "'", con);
+                //finds if the logged user is intermediate
                 DataTable deetbl = new DataTable();
                 sqa2.Fill(deetbl);
                 if (deetbl.Rows.Count > 0)
@@ -95,6 +98,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 else
                 {
                     SqlDataAdapter sqa3 = new SqlDataAdapter("Select UserID From tblUser where UserID = '" + UserIDlbl.Text + "' and SkillLevel = '" + "Advanced" + "'", con);
+                    //finds if logged user is advanced
                     DataTable deeetbl = new DataTable();
                     sqa3.Fill(deeetbl);
                     if (deeetbl.Rows.Count > 0)
@@ -175,7 +179,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             if (ThreePointersCheck.Text == "True")
             {
                 btn3Pointers.Enabled = false;
-                btn3Pointers.Text = "Points Gained!";
+                btn3Pointers.Text = "Points Gained!"; //above if statements display labels depending on if the videos are watched - if watched, they become disabled
             }
         }
         protected void Back_Button_Click(object sender, EventArgs e)
@@ -231,6 +235,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 StartProgress();
             }
         }
+        //above 3 queries initally add a user as their decided skill level
         protected void btnBeginnerDribble_Click(object sender, EventArgs e)
         {
             Video1Watch();
@@ -304,11 +309,12 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             btnBlocking.Enabled = false;
             btnBlocking.Text = "Come back later to do this again!";
         }
+        //above button clicks make it so they cannot click it again and they get the points from it by calling on voids
         void Clear()
         {
             hfUserID.Value = "";        
         }
-        void StartProgress()
+        void StartProgress() //void to initally set progress
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -322,7 +328,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
             }
             Response.Redirect("~/SKILLS.aspx");
         }
-        void IncrementProgress()
+        void IncrementProgress() //void to make the progress increase by 20
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -335,7 +341,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
             }
         }
-        void IncrementProgressNoRedirect()
+        void IncrementProgressNoRedirect() //increase progress by 20 without refreshing  the page
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -373,7 +379,8 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
             }
         }
-            void ResetProgress()
+        //Previous 2 voids are used to uprage the user's level
+            void ResetProgress() //sets progress to 0 after leveling up
             {
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
@@ -386,7 +393,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
                 }
             }
-        void IncrementProgressMORE()
+        void IncrementProgressMORE() //adds 30 progress
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -399,7 +406,7 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
 
             }
         }
-        void IncrementProgressMOST()
+        void IncrementProgressMOST() //adds 40 progress
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -533,5 +540,5 @@ namespace _13TPI_NZ_Skysport_Breakers_Web_Application
                 sqlCmd.ExecuteNonQuery();
             }
         }
-    }
+    }//all above voids set each video/task to 1 so they cannot watch it again
 }
